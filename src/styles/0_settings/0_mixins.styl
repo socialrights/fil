@@ -1,0 +1,26 @@
+transformCenterX($position)
+  position $position
+  left 50%
+  transform translateX(-50%)
+transformCenterY($position)
+  position $position
+  top 50%
+  transform translateY(-50%)
+transformCenter($position)
+  position $position
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+
+sm()
+  @media (min-width: $grid-sm)
+    {block}
+md()
+  @media (min-width: $grid-md)
+    {block}
+lg()
+  @media (min-width: $grid-lg)
+    {block}
+xl()
+  @media (min-width: $grid-xl)
+    {block}

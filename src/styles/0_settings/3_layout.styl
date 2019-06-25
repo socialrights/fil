@@ -1,0 +1,41 @@
+$w_sub = 250px
+
+notmobile(width)
+  grid-template-areas 'h h h h' '.. m s ..' 'f f f f'
+  grid-template-columns 1fr (width - $w_sub) $w_sub 1fr
+  grid-template-rows auto 1fr auto
+
+
+.layout
+  display grid
+  grid-template-columns 100%
+  grid-template-rows auto
+  min-height 100vh
+  &--single
+    grid-template-areas 'h' 'm' 'f'
+    grid-template-rows auto 1fr auto
+  &--double
+    grid-template-areas 'h' 'm' 's' 'f'
+    grid-template-rows auto 1fr auto auto
+    +lg()
+      grid-template-areas 'h h h h' '.. m s ..' 'f f f f'
+      grid-template-columns 1fr ($grid-lg - $w_sub) $w_sub 1fr
+      grid-template-rows auto 1fr auto
+    +xl()
+      grid-template-areas 'h h h h' '.. m s ..' 'f f f f'
+      grid-template-columns 1fr ($grid-xl - $w_sub) $w_sub 1fr
+      grid-template-rows auto 1fr auto
+
+.layout__header
+  grid-area h
+
+.layout__main
+  grid-area m
+
+.layout__sub
+  grid-area s
+  padding .5rem
+
+.layout__footer
+  grid-area f
+  margin-top 3rem

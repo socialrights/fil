@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "es6": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "indent": ["error", 2],
+    "semi": [2 , "never"],
+    "func-names": 0,
+    "arrow-body-style": 0,
+    "comma-dangle": ["error", "only-multiline"]
+  },
+  "globals": {
+    "window": true,
+    "location": true,
+    "document": true,
+  },
+}

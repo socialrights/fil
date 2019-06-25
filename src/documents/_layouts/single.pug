@@ -1,0 +1,16 @@
+include /_modules/head
+include /_modules/header
+include /_modules/footer
+
+block vars
+doctype html
+html(lang='ja' prefix="og: http://ogp.me/ns#")
+  +head(pageInfo)
+  body
+    .layout.layout--single
+      .layout__header.sticky-top
+        +header(pageInfo)
+      .layout__main
+        block main
+      .layout__footer
+        +footer(pageInfo)

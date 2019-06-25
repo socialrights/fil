@@ -1,0 +1,91 @@
+extends /_layouts/single
+
+append vars
+  -
+    var pageInfo = {
+      path: '/',
+      title: 'fil',
+      description: 'filは、webpack4をベースとした制作環境パッケージです'
+    }
+
+block main
+  .jumbotron.jumbotron-fluid
+    .jumbotron__bg
+      img(
+        src!='/images/hero.jpg'
+        alt='jumbotron'
+      )
+    .container.text-white.text-shadow-dark
+      h1.display-4
+        span fil
+      p.lead
+        | webpack4ベースの制作環境パッケージ
+  section.container
+    h2
+      span 概要
+    p
+      | filはFrontendIndentLoverの略で、webpack4をベースに pug, stylus, coffeeScript2を採用した制作環境パッケージです。
+    p
+      | IE11を含む各ブラウザの最新バージョンで動作する、最新のツールと技術を導入しています。
+    p
+      | フロントエンド開発のベースにしたり、webpackでの各ツールの使い方の参考にお使い下さい。
+  section.container
+    h2
+      span 特徴
+    p
+      | 使用しているツールや技術、フレームワークなどは下記になります。
+    ul
+      li dev server → browsersync
+      li template engine → pug
+      li css preprocessor → stylus + stylint
+      li javascript → coffeeScript2 + babel + eslint (+ jquery)
+      li svg-sprite
+      li bootstrap4 + css grid layout
+      li prism.js
+      li luminous lightbox
+      li swiper
+      li etc...
+  section.container.language-bash
+    h2
+      span 使い方
+    p
+      | 導入から開発・ビルドまでの説明です。yarn派なのでnpm派の方は適時置き換えてください。
+    section
+      h3
+        span 導入
+      p
+        a(href='') github
+        | から入手してください。
+      p
+        | 次にnpmのパッケージたちをインストールします。コマンドラインでプロジェクトフォルダを選択し、下記を入力します。
+      pre
+        code
+          | yarn install
+    section
+      h3
+        span 開発モード
+      p
+        | 開発モードはローカルサーバーが起動しwatchを開始します。
+      p
+        | 開発フォルダは<code>src</code>フォルダで、<code>dist</code>フォルダへビルドします。ローカルサーバーのdocument rootは<code>dist</code>フォルダです。
+      p
+        | プロダクションモードとの違いは、ローカルサーバーが立ち上がるかどうかと、webpackがプロダクションモードで出力するかどうかです。
+      pre
+        code
+          | yarn dev
+      p
+        | *pugやstylusに新しいファイルを追加した場合、再度こちらのコマンドを打ち直す必要があります。
+    section
+      h3
+        span プロダクションモード
+      p
+        | プロダクションモードでは、ローカルサーバーが立ち上がらず、watchもされません。ただwebpackがプロダクションモードでビルドします。プロダクションモードでは、css, jsファイルを圧縮し軽量化します。
+      pre
+        code
+          | yarn build
+  section.container
+    h2
+      span サンプルページ
+    p
+      | svgやpugの具体的なコードなどを載せています。
+    a(href='/samples') サンプルページへ
